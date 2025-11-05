@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small layout helpers */
+:root {
+  --maxw: 1100px;
+}
+body {
+  @apply bg-white text-gray-800;
+}
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* container */
+.container {
+  max-width: var(--maxw);
+}
+
+/* tiny animation */
+.fade-up {
+  will-change: transform, opacity;
+  transition: all 420ms cubic-bezier(.2,.9,.3,1);
+}
+
+@keyframes slow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+.animate-slow-bounce {
+  animation: slow-bounce 1.4s infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
