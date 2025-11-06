@@ -8,12 +8,19 @@
     {
       "src": "frontend/vite-project/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "frontend/vite-project/dist" }
+      "config": {
+        "distDir": "frontend/vite-project/dist"
+      }
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "backend/server.js" },
-    { "src": "/(.*)", "dest": "/frontend/vite-project/dist/index.html" }
-  ],
-  "outputDirectory": "frontend/vite-project/dist"
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/vite-project/dist/$1"
+    }
+  ]
 }
