@@ -5,6 +5,11 @@ const NAV_LINKS = ['Home', 'about', 'services', 'projects', 'skills', 'contact']
 export default function Navbar({ dark, setDark }) {
   const [active, setActive] = useState('home');
 
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+    setDark(true);
+  }, [setDark]);
+
   // Scroll spy: set active based on which section is near top
   useEffect(() => {
     const onScroll = () => {
