@@ -99,14 +99,18 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll Down Indicator */}
-<a href="#about" className="absolute bottom-20 left-1/2 transform -translate-x-1/2 cursor-pointer">
+        {/* Scroll Down Indicator (hidden on mobile) */}
+<a
+  href="#about"
+  className="absolute bottom-20 left-1/2 transform -translate-x-1/2 cursor-pointer hidden sm:block"
+>
   <div className="flex flex-col items-center">
     <div className="w-7 h-12 border-2 border-gray-500 dark:border-gray-400 rounded-full flex justify-center hover:border-yellow-400 transition">
       <div className="w-2 h-3 bg-gray-500 dark:bg-gray-300 rounded-full mt-2 animate-slow-bounce"></div>
     </div>
   </div>
 </a>
+
 
 
       </header>
