@@ -94,13 +94,21 @@ export default function Navbar({ dark, setDark }) {
           </button>
         </div>
 
-        {/* Mobile contact button */}
+        {/* Mobile Dark/Light Toggle (replaced Contact button) */}
         <div className="md:hidden">
-          <button onClick={() => scrollTo('contact')} className="px-3 py-1 rounded bg-yellow-500 text-black hover:bg-yellow-400 transition">
-            Contact
+          <button
+            onClick={() => {
+              setDark(!dark);
+              document.documentElement.classList.toggle('dark');
+            }}
+            aria-label="Toggle dark mode"
+            className="p-2 rounded-lg border border-gray-600 hover:bg-gray-800 transition"
+          >
+            {dark ? '🌙' : '☀️'}
           </button>
         </div>
       </div>
     </nav>
   );
 }
+
