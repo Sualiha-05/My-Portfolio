@@ -43,7 +43,7 @@ export default function Contact() {
 
     const endpoint = import.meta?.env?.VITE_API_URL
       ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api/contact`
-      : 'http://localhost:5000/api/contact';
+      : 'http://localhost:5173/api/contact';
 
     try {
       setSending(true);
